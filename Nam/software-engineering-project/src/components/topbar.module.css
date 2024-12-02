@@ -1,0 +1,21 @@
+.topBar{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: rgb(57, 31, 208);
+    height: 8em;
+    z-index: 1;
+}
+
+.logo{
+    width: 5em;
+    margin: 10px
+}
+
+.word{
+    font-size: 3rem;
+    color: white;
+}

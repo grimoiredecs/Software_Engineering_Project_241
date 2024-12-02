@@ -1,0 +1,77 @@
+.word{
+    font-size: 3rem;
+    color: white;
+}
+
+.backimage{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-image: url('./assets/home-page-2.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;  
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 2px solid black;
+    background-color:rgb(57, 31, 208);
+    width: 25rem;
+    height: 30rem;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+
+    z-index: 2;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+
+    width: 20rem;
+    height: 18rem;
+    
+    color: rgb(255, 255, 255);
+    background-color: rgb(57, 31, 208);
+    border-radius: 10px;
+    align-items: center;
+}
+
+.label{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.input{
+    padding: 8px;
+    font-size: 16px;
+    background-color: white;
+    width: 13em;
+    border-radius: 5px;
+    color: black;
+}
+
+.error{
+    height: 4em;
+    color: red;
+    font-size: 16px;
+}
+
+.button{
+    margin-bottom: 1em;
+    font-size: 23px;
+    width: 8em;
+    height: 2.8em;
+    background-color: rgb(6, 33, 121);
+    text-align: center;
+}   
