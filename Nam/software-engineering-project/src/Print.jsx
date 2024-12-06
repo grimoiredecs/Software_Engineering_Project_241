@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
+import { useUser } from './components/UserContext';
+
 import TopBar from "./components/TopBar.jsx";
 import DropdownMenu from "./components/DropdownMenu.jsx";
 import CreditBox from './components/CreditBox.jsx';
@@ -11,6 +13,7 @@ import styles from './Print.module.css';
 
 import LogoutIcon from './assets/logout-icon.png';
 import HomeIcon from './assets/home-icon.png';
+import DashboardIcon from './assets/dashboard-icon.png';
 import ProfileIcon from './assets/profile-icon.png';
 import RequestIcon from './assets/request-icon.png';
 import CartIcon from './assets/cart-icon.png';
@@ -25,6 +28,8 @@ function Print() {
 
     const [isCollapsed, setIsCollapsed] = useState(false);
 
+    const { user } = useUser();
+
     const toggleTaskBar = () => {
       setIsCollapsed(!isCollapsed);
     };
@@ -36,7 +41,7 @@ function Print() {
             <div className={isCollapsed ? styles.optionBoxCollapsed : styles.optionBox}>
         
                 <button onClick={toggleTaskBar} className={styles.toggleButton}>
-                <img src={OptionsIcon} alt="options icon" className={styles.optionsIcon}/>
+                    <img src={OptionsIcon} alt="options icon" className={styles.optionsIcon}/>
                 </button>
 
                 <p className={styles.optionItem}>
@@ -69,6 +74,27 @@ function Print() {
                     }
                 </p>
 
+                {/* If the user is admin, only show Logout, Home, SPSO */}
+                {/* If the user is student, show Logout, Home, Request, Cart, Profile, Print */}
+                {user.role.localeCompare("Admin") == 0 ? 
+                (
+                <p className={styles.optionItem}>
+                    <img src={DashboardIcon} alt="dashboard icon" className={styles.icon}/>
+
+                    {isCollapsed ? 
+                    (
+                    <></>
+                    ):
+                    (
+                    <Link to="/dashboard" className={styles.link}>
+                        Dashboard
+                    </Link>
+                    )
+                    }
+                </p>
+                ) : 
+                (
+                <div>
                     <p className={styles.optionItem}>
                     <img src={RequestIcon} alt="request icon" className={styles.icon}/>
                     
@@ -82,9 +108,9 @@ function Print() {
                         </Link>
                     )
                     }
-                </p>
+                    </p>
 
-                <p className={styles.optionItem}>
+                    <p className={styles.optionItem}>
                     <img src={CartIcon} alt="cart icon" className={styles.icon}/>
                     
                     {isCollapsed ? 
@@ -97,9 +123,9 @@ function Print() {
                         </Link>
                     )
                     }
-                </p>
+                    </p>
 
-                <p className={styles.optionItem}>
+                    <p className={styles.optionItem}>
                     <img src={ProfileIcon} alt="profile icon" className={styles.icon}/>
                     
                     {isCollapsed ? 
@@ -112,8 +138,10 @@ function Print() {
                         </Link>
                     )
                     }
-                </p>
-
+                    </p>
+                
+                </div>
+                )}
             </div>
 
             <div className={styles.printOptionContainer}>
