@@ -1,10 +1,15 @@
-import React from 'react';
-import styles from './dashboard.module.css';
-import TopBar from './components/TopBar';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+
+import styles from './dashboard.module.css';
+
+import TopBar from './components/TopBar';
+
 import LogoutIcon from './assets/logout-icon.png';
 import HomeIcon from './assets/home-icon.png';
 import DashboardIcon from './assets/dashboard-icon.png';
+
+import OptionsIcon from './assets/options-icon.png'
 
 const Dashboard = () => {
     let printHistory = [
@@ -19,8 +24,7 @@ const Dashboard = () => {
         {paperSize: "A3", noPaper: 5, dateTime: new Date(2023, 10, 25, 13, 47), studentId: 2346581, printResult: "In thành công"},
         {paperSize: "A4", noPaper: 51, dateTime: new Date(2024, 10, 13, 9, 19), studentId: 2228934, printResult: "Máy Hết Mực"},
         {paperSize: "A2", noPaper: 3, dateTime: new Date(2024, 6, 19, 20, 8), studentId: 2479663, printResult: "Tệp lỗi"},
-        {paperSize: "A4", noPaper: 44, dateTime: new Date(2024, 8, 21, 15, 18), studentId: 2311702, printResult: "In thành công"}
-        ,
+        {paperSize: "A4", noPaper: 44, dateTime: new Date(2024, 8, 21, 15, 18), studentId: 2311702, printResult: "In thành công"},
         {paperSize: "A4", noPaper: 12, dateTime: new Date(2024, 2, 11, 12, 40), studentId: 2438908, printResult: "In thành công"},
         {paperSize: "A4", noPaper: 11, dateTime: new Date(2024, 6, 1, 12, 43), studentId: 2114235, printResult: "In thành công"},
         {paperSize: "A3", noPaper: 3, dateTime: new Date(2023, 11, 30, 9, 42), studentId: 2241871, printResult: "In thành công"},
@@ -29,32 +33,66 @@ const Dashboard = () => {
         {paperSize: "A4", noPaper: 22, dateTime: new Date(2024, 8, 22, 11, 13), studentId: 2397842, printResult: "In thành công"}
     ];
 
+    const [isCollapsed, setIsCollapsed] = useState(false);
+
+    const toggleTaskBar = () => {
+      setIsCollapsed(!isCollapsed);
+    };
+
     return(
         <div className={styles.page}>
 
             <TopBar/>
 
-            <div className={styles.optionBox}>
-                
+            <div className={isCollapsed ? styles.optionBoxCollapsed : styles.optionBox}>
+        
+                <button onClick={toggleTaskBar} className={styles.toggleButton}>
+                    <img src={OptionsIcon} alt="options icon" className={styles.optionsIcon}/>
+                </button>
+
                 <p className={styles.optionItem}>
-                    <img src={LogoutIcon} alt="logout icon" className={styles.icon}></img>
-                    <Link to="/login" className={styles.link}>
-                    Đăng Xuất
-                    </Link>
+                    <img src={LogoutIcon} alt="logout icon" className={styles.icon}/>
+
+                    {isCollapsed ? 
+                    (
+                        <></>
+                    ):
+                    (
+                        <Link to="/login" className={styles.link}>
+                            Đăng Xuất
+                        </Link>
+                    )
+                    }
                 </p>
 
                 <p className={styles.optionItem}>
-                    <img src={HomeIcon} alt="home icon" className={styles.icon}></img>
-                    <Link to="/home" className={styles.link}>
-                    Trang Chủ
-                    </Link>
+                    <img src={HomeIcon} alt="home icon" className={styles.icon}/>
+                    
+                    {isCollapsed ? 
+                    (
+                        <></>
+                    ):
+                    (
+                        <Link to="/home" className={styles.link}>
+                            Trang Chủ
+                        </Link>
+                    )
+                    }
                 </p>
 
                 <p className={styles.optionItem}>
-                    <img src={DashboardIcon} alt="dashboard icon" className={styles.icon}></img>
-                    <Link to="/dashboard" className={styles.link}>
-                        Dashboard (SPSO)
-                    </Link>
+                    <img src={DashboardIcon} alt="dashboard icon" className={styles.icon}/>
+                    
+                    {isCollapsed ? 
+                    (
+                        <></>
+                    ):
+                    (
+                        <Link to="/dashboard" className={styles.link}>
+                            Dashboard
+                        </Link>
+                    )
+                    }
                 </p>
                     
             </div>

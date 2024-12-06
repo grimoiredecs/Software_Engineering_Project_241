@@ -1,0 +1,46 @@
+.uploadContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3em;
+
+    position: relative;
+    left: 4%;
+}
+
+.filename {
+    font-size: 17px;
+    font-weight: bold;
+
+    color: black;
+}
+
+.pdfPreview {
+    width: 40em;
+    height: 30em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.uploadOptionContainer{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+
+.uploadFile{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 6em;
+    font-size: 32px;
+
+    border-radius: 2px;
+}

@@ -14,8 +14,7 @@ const LoginPage = () => {
 
   // Dummy credentials
     const dummyAccount = [  { username: "admin", password: "admin123", role: "Admin" },
-                            { username: "student", password: "student123", role: "Student" }
-    ];
+                            { username: "student", password: "student123", role: "Student" }];
 
     const navigate = useNavigate()
 
