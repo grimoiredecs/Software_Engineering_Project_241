@@ -119,7 +119,7 @@ function Print() {
                     ):
                     (
                         <Link to="/buy-pages" className={styles.link}>
-                            Mua Thêm Trang In
+                            Mua Thêm Giấy In
                         </Link>
                     )
                     }
