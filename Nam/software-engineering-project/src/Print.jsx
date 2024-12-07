@@ -103,7 +103,7 @@ function Print() {
                         <></>
                     ):
                     (
-                        <Link to="/unavailable" className={styles.link}>
+                        <Link to="/request" className={styles.link}>
                         Yêu Cầu
                         </Link>
                     )
@@ -118,8 +118,8 @@ function Print() {
                         <></>
                     ):
                     (
-                        <Link to="/unavailable" className={styles.link}>
-                        Giỏ Hàng
+                        <Link to="/buy-pages" className={styles.link}>
+                            Mua Thêm Trang In
                         </Link>
                     )
                     }
@@ -133,7 +133,7 @@ function Print() {
                         <></>
                     ):
                     (
-                        <Link to="/unavailable" className={styles.link}>
+                        <Link to="/profile" className={styles.link}>
                         Thông Tin Cá Nhân
                         </Link>
                     )

@@ -1,24 +1,48 @@
-.backimage{
+.background{
     display: flex;
     flex-direction: column;
-    background-image: url('./assets/home-page.png');
+    background-color: rgb(237, 240, 245);
     background-size: cover;
     background-position: center;
 }
 
-.headerWord{
+.purchaseContainer{
+    position: absolute;
+    top: 7%;
+    right: 0;
+
+    height: 93%;
+    width: 91%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox{
+    position: relative;
+    
+    width: 95%;
+    height: 20%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
     color: black;
-    font-size: 30px;
+
+    margin-top: 3em;
+
+    border-radius: 3px;
+
 }
 
-.logo{
-    width: 5em;
-    margin: 10px
-}
+.inputTitleBox{
+    position: relative;
+    width: 100%;
+    height: 20%;
 
-.word{
-    font-size: 3rem;
-    color: white;
+    border-bottom: 2px solid rgb(150, 150, 144);
+
 }
 
 .optionBox{
@@ -102,71 +126,4 @@
     width: 45px;
 
     margin: 5;
-}
-
-.printPage{
-    display: flex;
-    flex-direction: row;
-
-    position: absolute;
-    height: 69.4rem;
-    width: 100vw;
-
-    background: rgba(72, 71, 90, 0.6);
-    
-    align-items: center;
-    justify-content: center;
-}
-
-.printIcon{
-    height: 55px;
-    width: 60px;
-
-    margin: 5px;
-}
-
-.printLink{
-    font-size: 45px;
-    color: white;
-    text-decoration-line: underline;
-
-    margin-left: 10px;
-}
-
-.contactBox{
-    position: absolute;
-    top: 98%;
-    left: 99%;
-    transform: translate(-100%, -100%);
-    
-    height: 11em;
-    width: 33em;
-
-}
-
-.contactIcon{
-    height: 25px;
-    width: 30px;
-
-    margin: 5px;
-    margin-right: 10px;
-}
-
-.contact{
-    font-weight: bold;
-    font-size: 27px;
-    color: rgb(212, 204, 189);
-    margin: 2px;
-}
-
-.contactDetail{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-
-
-    font-size: 27px;
-    color: rgb(255, 244, 228);
-    margin: 2px; 
 }

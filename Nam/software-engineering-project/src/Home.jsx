@@ -20,7 +20,7 @@ import LocationIcon from './assets/location-icon.png';
 import PhoneIcon from './assets/phone-icon.png';
 import MailIcon from './assets/mail-icon.png';
 
-import OptionsIcon from './assets/options-icon.png'
+import OptionsIcon from './assets/options-icon.png';
 
 
 const Home = () => {
@@ -110,7 +110,7 @@ const Home = () => {
                 <></>
               ):
               (
-                <Link to="/unavailable" className={styles.link}>
+                <Link to="/request" className={styles.link}>
                   Yêu Cầu
                 </Link>
               )
@@ -125,8 +125,8 @@ const Home = () => {
                 <></>
               ):
               (
-                <Link to="/unavailable" className={styles.link}>
-                  Giỏ Hàng
+                <Link to="/buy-pages" className={styles.link}>
+                  Mua Thêm Trang In
                 </Link>
               )
               }
@@ -140,7 +140,7 @@ const Home = () => {
                 <></>
               ):
               (
-                <Link to="/unavailable" className={styles.link}>
+                <Link to="/profile" className={styles.link}>
                   Thông Tin Cá Nhân
                 </Link>
               )
